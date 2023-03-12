@@ -1,0 +1,490 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<meta name="description" content="We specialise in design and improve product and se" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta property="og:locale" content="en-us" />
+		<meta property="og:title" content="Nest - Multipurpose eCommerce HTML Template" />
+		<meta property="og:site_name" content="Nest" />
+		<meta property="og:description" content="We specialise in design and improve product and se" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="index.html" />
+		<meta property="og:image" content="{% static 'media/site_logo/imgs/logo_VKBBW51_1.png' %}" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Nest - Multipurpose eCommerce HTML Template" />
+		<meta name="twitter:description" content="We specialise in design and improve product and se" />
+		<meta name="twitter:site" content="@Nest" />
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'media/site_logo/imgs/favicon_p4HhDzm_1.png' %}" />
+		<link rel="stylesheet" href="{% static 'assets/css/plugins/animate.min.css' %}" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<title>Vendor | Signup </title>
+		<style>
+			.messages {
+				background-color: rgb(185, 255, 185);
+				width: 500px;
+				height: 50px;
+				border-radius: 10px;
+				text-align: center;
+				color: green;
+				padding: 12.5px;
+			}
+
+			.error {
+				background-color: rgb(255, 166, 166);
+				color: rgb(243, 21, 21);
+				width: 500px;
+				height: 50px;
+				border-radius: 10px;
+				text-align: center;
+				padding: 12.5px;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="header-area header-style-1 header-style-5 header-height-2">
+			<div class="header-middle header-middle-ptb-1 d-none d-lg-block">
+				<div class="container">
+					<div class="header-wrap">
+						<div class="logo logo-width-1">
+							<a href="{% url 'index' %}">
+								<img src="{% static 'media/site_logo/imgs/logo_VKBBW51_1.png' %}" alt="Nest" />
+							</a>
+						</div>
+						<div class="header-right">
+							<div class="search-style-2">
+								<form action="https://nest.apexcode.info/product-search/" method="post">
+									<input type="hidden" name="csrfmiddlewaretoken" value="rPITJcf8RrJmFAYPf5Xj1LQULung24apaE34iHCOF0Rp7y8cdoZcx3at6z9m3IRx">
+									<input type="text" name="search-product" placeholder="Search for items..." autocomplete="off" required />
+									<button type="submit">
+										<i class="fi-rs-search"></i>
+									</button>
+								</form>
+							</div>
+							<div class="header-action-right">
+								<div class="header-action-2">
+									<div class="header-action-icon-2">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header-bottom header-bottom-bg-color sticky-bar">
+				<div class="container">
+					<div class="header-wrap header-space-between position-relative">
+						<div class="logo logo-width-1 d-block d-lg-none">
+							<a href={% url "index" %}>
+								<img src="{% static 'media/site_logo/imgs/logo_VKBBW51_1.png' %}" alt="Nest" />
+							</a>
+						</div>
+						<div class="header-nav d-none d-lg-flex">
+							<div class="main-categori-wrap d-none d-lg-block">
+								</div>
+							</div>
+							<div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
+								<nav>
+									<ul>
+										<li>
+											<a class="active" href={% url "index" %}>Home</a>
+										</li>
+										<li class="position-static hot-deals">
+											<img src="{% static 'assets/imgs/theme/icons/icon-hot-white.svg' %}" alt="hot deals" />
+											<a href="#">Shop </a>
+										</li>
+										<li class="position-static">
+											<a href="#">Categories </a>
+										</li>
+										<li>
+											<a href="#">Stores</a>
+										</li>
+										<li>
+											<a href="#">Blog</a>
+										</li>
+										<li>
+											<a href="{% url 'form' %}">Contact</a>
+										</li>
+										<li>
+											<a class="active" href={% url "Vendor:v-login" %} style="margin-left: 555px;
+                                                margin-top: 15px;
+                                                height: 40px;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                background: #fdc040;
+                                                padding: 5px 20px;
+                                                border-radius: 5px;"> Account </a>
+											<ul class="sub-menu" style="margin-left:450px;margin-top:20px;">
+												<li>
+													<a style="color:#7e7e7e !important; display:inline;" href="#">Already Vendor?<a style="display:-webkit-inline-box;" href="{% url "Vendor:v-login" %}" style="color:#7e7e7e">Login</a>
+													</a>
+												</li>
+											</ul>
+										</li>
+										</li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+					<div class="header-action-icon-2 d-block d-lg-none">
+						<div class="burger-icon burger-icon-white">
+							<span class="burger-icon-top"></span>
+							<span class="burger-icon-mid"></span>
+							<span class="burger-icon-bottom"></span>
+						</div>
+					</div>
+					<div class="header-action-right d-block d-lg-none">
+						<div class="header-action-2">
+							<div class="header-action-icon-2">
+								<a href="dashboard/index.html">
+									<img alt="Nest" src="{% static 'assets/imgs/theme/icons/icon-user.svg' %}" />
+								</a>
+							</div>
+							<div class="header-action-icon-2">
+								<a class="mini-cart-icon" href="cart/index.html">
+									<img alt="Nest" src="{% static 'assets/imgs/theme/icons/icon-cart.svg' %}" />
+									<span class="pro-count white">0</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</header>
+		<center> {% if messages %} {% for i in messages %} {% if i.tags == "error" %} <div class="error">
+				{{i}}
+			</div> {% else %} <div class="messages">
+				{{i}}
+			</div> {% endif %} {% endfor %} {% endif %} <div class="page-content pt-150 pb-150" style="margin-top:-80px;margin-bottom:-40px;">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-8 col-lg-10 col-md-12 m-auto">
+							<div class="row">
+								<div class="col-lg-6 col-md-8">
+									<div class="login_wrap widget-taber-content background-white">
+										<div class="padding_eight_all bg-white">
+											<div class="heading_s1">
+												<h1 class="mb-5">Create a Vendor Account</h1>
+												<p class="mb-30">Already have an account? <a href={% url "Vendor:v-login" %}>Login</a>
+												</p>
+											</div>
+											<form method="POST" novalidate> {% csrf_token %} {{form.non_field_errors}}
+												<div id="div_id_username" class="ctrlHolder">
+													{{form.username.label}} {{form.username}}
+													<div id="hint_id_username" class="formHint">usernames can't contain spaces or @/./+/-/_ characters .</div>
+												</div>
+												<ul class="errorlist">
+													<li>{{form.username.errors}}</li>
+												</ul>
+												<div id="div_id_first_name" class="ctrlHolder">
+													{{form.first_name.label}} {{form.first_name}}
+												</div>
+												<ul class="errorlist">
+													<li>{{form.first_name.errors}}</li>
+												</ul>
+												<div id="div_id_last_name" class="ctrlHolder">
+													{{form.last_name.label}} {{form.last_name}}
+												</div>
+												<ul class="errorlist">
+													<li>{{form.last_name.errors}}</li>
+												</ul>
+												<div id="div_id_email" class="ctrlHolder">
+													{{form.email.label}} {{form.email}}
+												</div>
+												<ul class="errorlist">
+													<li>{{form.email.errors}}</li>
+												</ul>
+												<div id="div_id_password1" class="ctrlHolder">
+													{{form.password1.label}} {{form.password1}}
+												</div>
+												<ul class="errorlist">
+													<li>{{form.password1.errors}}</li>
+												</ul>
+												<div id="div_id_password2" class="ctrlHolder">
+													{{form.password2.label}} {{form.password2}}
+												</div>
+												<ul class="errorlist">
+													<li>{{form.password2.errors}}</li>
+												</ul>
+												<div class="login_footer form-group mb-50">
+													<div class="chek-form">
+														<div class="custome-checkbox">
+															<div class="mb-3">
+																<p class="small text-center text-muted">By signing up, you confirm that you’ve read and accepted our Terms.</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="form-group mb-30">
+													<button type="submit" class="btn btn-fill-out btn-block hover-up font-weight-bold" name="login">Submit &amp; Register</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6 pr-30 d-none d-lg-block">
+									<img class="border-radius-15" src="{% static 'media/vendor/login.png' %}" alt="Nest" type="image/png">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="main">
+				<section class="newsletter mb-15 wow animate__animated animate__fadeIn">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="position-relative newsletter-inner">
+									<div class="newsletter-content">
+										<h2 class="mb-20"> Stay home & get your daily <br /> needs from our shop </h2>
+										<p class="mb-45">Start You'r Daily Shopping with <span class="text-brand">Nest</span>
+										</p>
+										<form method="GET" action="/emailsub/" class="form-subcriber d-flex selector-2">
+											<input type="email" name="email_id" required/>
+											<button class="btn" type="submit">Subscribe</button>
+										</form>
+									</div>
+									<img src="{% static 'media/site_logo/imgs/banner-9.png' %}" alt="newsletter" />
+								</div> {% if messages %} {% for i in messages %} {% if i.tags == "error" %} <div class="error">
+									{{i}}
+								</div> {% else %} <div class="messages">
+									{{i}}
+								</div> {% endif %} {% endfor %} {% endif %}
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="featured section-padding">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-1-5 col-md-4 col-12 col-sm-6 mb-md-4 mb-xl-0">
+								<div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp" data-wow-delay="0">
+									<div class="banner-icon">
+										<img src="{% static 'assets/imgs/theme/icons/icon-1.svg' %}" alt="" />
+									</div>
+									<div class="banner-text">
+										<h3 class="icon-box-title">Best prices & offers</h3>
+										<p>Orders $50 or more</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
+								<div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
+									<div class="banner-icon">
+										<img src="{% static 'assets/imgs/theme/icons/icon-2.svg' %}" alt="" />
+									</div>
+									<div class="banner-text">
+										<h3 class="icon-box-title">Free delivery</h3>
+										<p>24/7 amazing services</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
+								<div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
+									<div class="banner-icon">
+										<img src="{% static 'assets/imgs/theme/icons/icon-3.svg' %}" alt="" />
+									</div>
+									<div class="banner-text">
+										<h3 class="icon-box-title">Great daily deal</h3>
+										<p>When you sign up</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
+								<div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
+									<div class="banner-icon">
+										<img src="{% static 'assets/imgs/theme/icons/icon-4.svg' %}" alt="" />
+									</div>
+									<div class="banner-text">
+										<h3 class="icon-box-title">Wide assortment</h3>
+										<p>Mega Discounts</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
+								<div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp" data-wow-delay=".4s">
+									<div class="banner-icon">
+										<img src="{% static 'assets/imgs/theme/icons/icon-5.svg' %}" alt="" />
+									</div>
+									<div class="banner-text">
+										<h3 class="icon-box-title">Easy returns</h3>
+										<p>Within 30 days</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-1-5 col-md-4 col-12 col-sm-6 d-xl-none">
+								<div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp" data-wow-delay=".5s">
+									<div class="banner-icon">
+										<img src="{% static 'assets/imgs/theme/icons/icon-6.svg' %}" alt="" />
+									</div>
+									<div class="banner-text">
+										<h3 class="icon-box-title">Safe delivery</h3>
+										<p>Within 30 days</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="section-padding footer-mid">
+					<div class="container pt-15 pb-20">
+						<div class="row">
+							<div class="col">
+								<div class="widget-about font-md mb-md-3 mb-lg-3 mb-xl-0 wow animate__animated animate__fadeInUp" data-wow-delay="0">
+									<div class="logo mb-30">
+										<a href="{% url 'form' %}" class="mb-15">
+											<img src="{% static 'media/site_logo/imgs/logo_VKBBW51_1.png' %}" alt="Nest" />
+										</a>
+										<p class="font-lg text-heading"></p>
+									</div>
+									<ul class="contact-infor">
+										<li>
+											<img src="{% static 'assets/imgs/theme/icons/icon-location.svg' %}" alt="" />
+											<strong>Address: </strong>
+											<span>205 North Michigan Avenue, Suite 810 Chicago, 60601, USA</span>
+										</li>
+										<li>
+											<img src="{% static 'assets/imgs/theme/icons/icon-contact.svg' %}" alt="" />
+											<strong>Call Us:</strong>
+											<span>(123) 456-7890</span>
+										</li>
+										<li>
+											<img src="{% static 'assets/imgs/theme/icons/icon-email-2.svg' %}" alt="" />
+											<strong>Email:</strong>
+											<span>contact <a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="561613203724377835393b">[email&#160;protected]</a>
+											</span>
+										</li>
+										<li>
+											<img src="{% static 'assets/imgs/theme/icons/icon-clock.svg' %}" alt="" />
+											<strong>Hours:</strong>
+											<span>10:00 - 18:00, Mon - Sat</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="footer-link-widget col wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
+								<h4 class="widget-title">Company</h4>
+								<ul class="footer-list mb-sm-5 mb-md-0">
+									<li>
+										<a href="pages/about-us.html">About Us</a>
+									</li>
+									<li>
+										<a href="pages/terms-of-service.html">Terms Of Service</a>
+									</li>
+									<li>
+										<a href="pages/refund-policy.html">Refund Policy</a>
+									</li>
+								</ul>
+							</div>
+							<div class="footer-link-widget col wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
+								<h4 class="widget-title">Pages</h4>
+								<ul class="footer-list mb-sm-5 mb-md-0">
+									<li>
+										<a href="cart/index.html">View Cart</a>
+									</li>
+									<li>
+										<a href="supplier-register/index.html">Become a Vendor</a>
+									</li>
+									<li>
+										<a href="supplier-login/index.html">Vendor Login</a>
+									</li>
+									<li>
+										<a href="contact/index.html">Contact Us</a>
+									</li>
+								</ul>
+							</div>
+							<div class="footer-link-widget col wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
+								<h4 class="widget-title">Categories</h4>
+								<ul class="footer-list mb-sm-5 mb-md-0">
+									<li>
+										<a href="shop/super/food-beverage.html">Food &amp; Beverage</a>
+									</li>
+									<li>
+										<a href="shop/super/beauty-fragrances.html">Beauty &amp; Fragrances</a>
+									</li>
+									<li>
+										<a href="shop/super/office-stationery.html">Office &amp; Stationery</a>
+									</li>
+									<li>
+										<a href="shop/super/consumer-electronics.html">Consumer Electronics</a>
+									</li>
+									<li>
+										<a href="shop/super/fashion-accessories.html">Fashion &amp; Accessories</a>
+									</li>
+									<li>
+										<a href="shop/super/home-furniture.html">Home &amp; Furniture</a>
+									</li>
+									<li>
+										<a href="shop/super/health-personal-care.html">Health &amp; Personal Care</a>
+									</li>
+								</ul>
+							</div>
+							<div class="footer-link-widget widget-install-app col wow animate__animated animate__fadeInUp" data-wow-delay=".4s">
+								<h4 class="widget-title">Install App</h4>
+								<p class="">From App Store or Google Play</p>
+								<div class="download-app">
+									<a href="#" class="hover-up mb-sm-2 mb-lg-0">
+										<img class="active" src="{% static 'assets/imgs/theme/app-store.jpg' %}" alt="" />
+									</a>
+									<a href="#" class="hover-up mb-sm-2">
+										<img src="{% static 'assets/imgs/theme/google-play.jpg' %}" alt="" />
+									</a>
+								</div>
+								<p class="mb-20">Secured Payment Gateways</p>
+								<img class="" src="{% static 'assets/imgs/theme/payment-method.png' %}" alt="" />
+							</div>
+						</div>
+				</section>
+				<div class="container pb-30 wow animate__animated animate__fadeInUp" data-wow-delay="0">
+					<div class="row align-items-center">
+						<div class="col-12 mb-30">
+							<div class="footer-bottom"></div>
+						</div>
+						<div class="col-xl-4 col-lg-6 col-md-6">
+							<p class="font-sm mb-0">&copy; 2022, <strong class="text-brand">Nest</strong> - All rights reserved </p>
+						</div>
+						<div class="col-xl-4 col-lg-6 text-center d-none d-xl-block">
+							<div class="hotline d-lg-inline-flex mr-30">
+								<img src="{% static 'assets/imgs/theme/icons/phone-call.svg' %}" alt="hotline" />
+								<p>1900 - 8888 <span>24/7 Support Center</span>
+								</p>
+							</div>
+							<div class="hotline d-lg-inline-flex mr-30">
+								<img src="{% static 'assets/imgs/theme/icons/phone-call.svg' %}" alt="hotline" />
+								<p>1900 - 6666 <span>Working 8:00 - 22:00</span>
+								</p>
+							</div>
+						</div>
+						<div class="col-xl-4 col-lg-6 col-md-6 text-end d-none d-md-block">
+							<div class="mobile-social-icon">
+								<h6>Follow Us</h6>
+								<a href="https://www.facebook.com/">
+									<img src="{% static 'assets/imgs/theme/icons/icon-facebook-white.svg' %}" alt="" />
+								</a>
+								<a href="https://twitter.com/">
+									<img src="{% static 'assets/imgs/theme/icons/icon-twitter-white.svg' %}" alt="" />
+								</a>
+								<a href="https://www.instagram.com/">
+									<img src="{% static 'assets/imgs/theme/icons/icon-instagram-white.svg' %}" alt="" />
+								</a>
+								<a href="https://www.pinterest.com/">
+									<img src="{% static 'assets/imgs/theme/icons/icon-pinterest-white.svg' %}" alt="" />
+								</a>
+								<a href="https://www.youtube.com/">
+									<img src="{% static 'assets/imgs/theme/icons/icon-youtube-white.svg' %}" alt="" />
+								</a>
+							</div>
+							<p class="font-sm">Up to 15% discount on your first subscribe</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+	</body>
+</html>

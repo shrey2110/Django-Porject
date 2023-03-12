@@ -1,0 +1,695 @@
+{% load static %} <html class="no-js'" lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<!-- /Added by HTTrack -->
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<meta name="description" content="We specialise in design and improve product and se" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta property="og:locale" content="en-us" />
+		<meta property="og:title" content="Nest - Multipurpose eCommerce HTML Template" />
+		<meta property="og:site_name" content="Nest" />
+		<meta property="og:description" content="We specialise in design and improve product and se" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="index.html" />
+		<meta property="og:image" content="{% static 'media/site_logo/imgs/logo_VKBBW51_1.png' %}" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Nest - Multipurpose eCommerce HTML Template" />
+		<meta name="twitter:description" content="We specialise in design and improve product and se" />
+		<meta name="twitter:site" content="@Nest" />
+		<title>{{ products.product_category }} Page</title>
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'media/site_logo/imgs/favicon_p4HhDzm_1.png' %}" />
+		<link rel="stylesheet" href="{% static 'assets/css/plugins/animate.min.css' %}" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<style>
+			.update {
+				position: relative;
+				background-color: #def9ec;
+				font-size: 14px;
+				font-weight: 700;
+				border-radius: 4px;
+				padding: 6px 20px;
+				display: inline-block;
+				transition: 0.2s;
+				cursor: pointer;
+			}
+
+			.update:hover {
+				background-color: #3bb77e;
+				color: white;
+				transform: translate(0, -3px);
+			}
+
+			a:hover {
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="header-area header-style-1 header-style-5 header-height-2">
+			<div class="header-middle header-middle-ptb-1 d-none d-lg-block">
+				<div class="container">
+					<div class="header-wrap">
+						<div class="logo logo-width-1">
+							<a href="{% url 'index' %}">
+								<img src="{% static 'media/site_logo/imgs/logo_VKBBW51_1.png' %}" alt="Nest" />
+							</a>
+						</div>
+						<div class="header-right">
+							<div class="search-style-2">
+								<form action="https://nest.apexcode.info/product-search/" method="post">
+									<input type="hidden" name="csrfmiddlewaretoken" value="rPITJcf8RrJmFAYPf5Xj1LQULung24apaE34iHCOF0Rp7y8cdoZcx3at6z9m3IRx">
+									<input type="text" name="search-product" placeholder="Search for items..." autocomplete="off" required />
+									<button type="submit">
+										<i class="fi-rs-search"></i>
+									</button>
+								</form>
+							</div>
+							<div class="header-action-right">
+								<div class="header-action-2">
+									<div class="header-action-icon-2">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header-bottom header-bottom-bg-color sticky-bar">
+				<div class="container">
+					<div class="header-wrap header-space-between position-relative">
+						<div class="logo logo-width-1 d-block d-lg-none">
+							<a href={% url "index" %}>
+								<img src="{% static 'media/site_logo/imgs/logo_VKBBW51_1.png' %}" alt="Nest" />
+							</a>
+						</div>
+						<div class="header-nav d-none d-lg-flex">
+								</div>
+							</div>
+							<div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
+								<nav>
+									<ul>
+										<li>
+											<a class="active" href={% url "index" %}>Home <i class="fi-rs-angle-down"></i>
+											</a>
+										</li>
+										<li class="position-static hot-deals">
+											<img src="{% static 'assets/imgs/theme/icons/icon-hot-white.svg' %}" alt="hot deals" />
+											<a href="#">Shop <i class="fi-rs-angle-down"></i>
+											</a>
+										</li>
+										<li class="position-static">
+											<a href="#">Categories </a>
+										</li>
+										<li>
+											<a href="#">Stores</a>
+										</li>
+										<li>
+											<a href="#">Blog</a>
+										</li>
+										<li>
+											<a href="{% url 'form' %}">Contact</a>
+										</li>
+										<li style="margin-left: 450px;">
+											<a class="active" href="#" style="margin-top: 15px;
+                                                height: 40px;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                padding: 5px 20px;
+                                                border-radius: 5px;"> Hi {{ company | truncatewords:2 }}
+												<i class="fi-rs-angle-down"></i>
+											</a>
+											<ul class="sub-menu" style="margin-top:20px;">
+												<li>
+													<img src="{% static 'assets/imgs/login/products.png' %}" type="image/png" style="vertical-align: middle;" />
+													<a style="display:-webkit-inline-box;" href="{% url "products:p-profile" %}" style="color:#7e7e7e">Product Registration </a>
+												</li>
+												<li>
+													<img src="{% static 'assets/imgs/login/dashboard.png' %}" type="image/png" style="vertical-align: middle;" />
+													<a style="display:-webkit-inline-box;" href="{% url "products:p-dashboard" %}" style="color:#7e7e7e">Back to Dashboard </a>
+												</li>
+												<li>
+													<img src="{% static 'assets/imgs/login/logout.png' %}" style="vertical-align: middle;" />
+													<a href={% url "User:u-logout" %} style="display:-webkit-inline-box;">&nbsp;&nbsp;Logout</a>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+					<div class="header-action-icon-2 d-block d-lg-none">
+						<div class="burger-icon burger-icon-white">
+							<span class="burger-icon-top"></span>
+							<span class="burger-icon-mid"></span>
+							<span class="burger-icon-bottom"></span>
+						</div>
+					</div>
+					<div class="header-action-right d-block d-lg-none">
+						<div class="header-action-2">
+							<div class="header-action-icon-2">
+								<a href="dashboard/index.html">
+									<img alt="Nest" src="{% static 'assets/imgs/theme/icons/icon-user.svg' %}" />
+								</a>
+							</div>
+							<div class="header-action-icon-2">
+								<a class="mini-cart-icon" href="cart/index.html">
+									<img alt="Nest" src="{% static 'assets/imgs/theme/icons/icon-cart.svg' %}" />
+									<span class="pro-count white">0</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</header>
+		<div class="container mb-30">
+			<div class="row">
+				<div class="col-xl-11 col-lg-12 m-auto">
+					<div class="row">
+						<div class="col-xl-9">
+							<div class="product-detail accordion-detail">
+								<div class="row mb-50 mt-30">
+									<div class="col-md-6 col-sm-12 col-xs-12 mb-md-0 mb-sm-5">
+										<div class="detail-gallery">
+											<span class="zoom-icon">
+												<i class="fi-rs-search"></i>
+											</span>
+											<div class="product-image-slider">
+												<figure class="border-radius-10">
+													<center>
+														<img src={{ products.product_image.url }} alt="product image" width="437px" height="437px" />
+													</center>
+												</figure>
+											</div>
+											<div class="slider-nav-thumbnails">
+												<div>
+													<center>
+														<img src={{ products.product_image.url }} alt="product image" width="95px" height="95px" />
+													</center>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 col-sm-12 col-xs-12">
+										<div class="detail-info pr-30 pl-30">
+											<h3 class="title-detail">{{ products.product_name }}</h3>
+											<div class="product-detail-rating">
+												<div class="product-rate-cover text-end">
+													<div class="product-rate d-inline-block">
+														<div class="product-rating" style="width: 40%"></div>
+													</div>
+													<span class="font-small ml-5 text-muted"> (0 reviews)</span>
+												</div>
+											</div>
+											<div class="clearfix product-price-cover">
+												<div class="product-price primary-color float-left">
+													<span class="current-price text-brand">₹ {{ products.product_price }}</span>
+													<span>
+														<span class="old-price font-md ml-15">₹ {{ products.product_old_price }}
+														</span>
+													</span>
+												</div>
+											</div>
+											<div class="short-desc mb-30">
+												<p class="font-lg">
+												<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam rem officia, corrupti reiciendis minima nisi modi, quasi, odio minus dolore impedit fuga eum eligendi..</p>. </p>
+											</div>
+											<div class="detail-extralink mb-50">
+											</div>
+											<div class="font-xs">
+												<ul class="mr-50 float-start">
+													<li class="mb-5">Category: <span class="text-brand">{{ products.product_category }}</span>
+													</li>
+													<li class="mb-5">Date: <span class="text-brand"> Feb 17 2022</span>
+													</li>
+												</ul>
+												<ul class="float-start">
+													<li>Stock: <span class="in-stock text-brand ml-5">{{ products.stock }}</span>
+													</li>
+													<li>PIECE: <span class="text-brand">{{ products.piece }}</span>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="product-info">
+									<div class="tab-style3">
+										<ul class="nav nav-tabs" id="myTab" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" id="Description-tab" data-bs-toggle="tab" href="#Description" role="tab" aria-controls="home" aria-selected="true">Description</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link " id="Additional-info-tab" data-bs-toggle="tab" href="#Additional-info" role="tab" aria-controls="home" aria-selected="false">Additional info</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="Vendor-info-tab" data-bs-toggle="tab" href="#Vendor-info" role="tab" aria-controls="profile" aria-selected="false">Vendor</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="Reviews-tab" data-bs-toggle="tab" href="#Reviews" role="tab" aria-controls="profile" aria-selected="false">Reviews (0)</a>
+											</li>
+										</ul>
+										<div class="tab-content shop_info_tab entry-main-content">
+											<div class="tab-pane fade show active" id="Description" role="tabpanel" aria-labelledby="Description-tab">
+												<div class="">
+													<p>Uninhibited carnally hired played in whimpered dear gorilla koala depending and much yikes off far quetzal goodness and from for grimaced goodness unaccountably and meadowlark near unblushingly crucial scallop tightly neurotic hungrily some and dear furiously this apart.</p>
+													<p>Spluttered narrowly yikes left moth in yikes bowed this that grizzly much hello on spoon-fed that alas rethought much decently richly and wow against the frequent fluidly at formidable acceptably flapped besides and much circa far over the bucolically hey precarious goldfinch mastodon goodness gnashed a jellyfish and one however because.</p>
+													<ul>
+														<li>Type Of PackingBottle</li>
+														<li>ColorGreen, Pink, Powder Blue, Purple</li>
+														<li>Quantity Per Case100ml</li>
+														<li>Ethyl Alcohol70%</li>
+														<li>Piece In OneCarton</li>
+													</ul>
+													<p>Laconic overheard dear woodchuck wow this outrageously taut beaver hey hello far meadowlark imitatively egregiously hugged that yikes minimally unanimous pouted flirtatiously as beaver beheld above forward energetic across this jeepers beneficently cockily less a the raucously that magic upheld far so the this where crud then below after jeez enchanting drunkenly more much wow callously irrespective limpet.</p>
+													<p>Packaging &amp; Delivery</p>
+													<p>Less lion goodness that euphemistically robin expeditiously bluebird smugly scratched far while thus cackled sheepishly rigid after due one assenting regarding censorious while occasional or this more crane went more as this less much amid overhung anathematic because much held one exuberantly sheep goodness so where rat wry well concomitantly.</p>
+													<p>Scallop or far crud plain remarkably far by thus far iguana lewd precociously and and less rattlesnake contrary caustic wow this near alas and next and pled the yikes articulate about as less cackled dalmatian in much less well jeering for the thanks blindly sentimental whimpered less across objectively fanciful grimaced wildly some wow and rose jeepers outgrew lugubrious luridly irrationally attractively dachshund.</p>
+													<p>Suggested Use</p>
+													<ul>
+														<li>Refrigeration not necessary.</li>
+														<li>Stir before serving</li>
+													</ul>
+													<p>Other Ingredients</p>
+													<ul>
+														<li>Organic raw pecans, organic raw cashews.</li>
+														<li>This butter was produced using a LTG (Low Temperature Grinding) process</li>
+														<li>Made in machinery that processes tree nuts but does not process peanuts, gluten, dairy or soy</li>
+													</ul>
+													<p>Warnings</p>
+													<ul>
+														<li>Oil separation occurs naturally. May contain pieces of shell.</li>
+													</ul>
+												</div>
+											</div>
+											<br>
+											<div class="tab-pane fade show active" id="Additional-info" role="tabpanel" aria-labelledby="Additional-info-tab">
+												<table class="font-md">
+													<tbody>
+														<tr class="stand-up">
+															<th>Price</th>
+															<td>
+																<p>₹ {{ products.product_price }}</p>
+															</td>
+														</tr>
+														<tr class="folded-wo-wheels">
+															<th>AVAILABILITY</th>
+															<td>
+																<p>{{ products.stock }} in stock</p>
+															</td>
+														</tr>
+														<tr class="folded-w-wheels">
+															<th>PIECES PER SET</th>
+															<td>
+																<p>{{ data.piece }} pieces</p>
+															</td>
+														</tr>
+														<tr class="weight-capacity">
+															<th>Main Category</th>
+															<td>
+																<p>{{ products.product_category }}</p>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<div class="tab-pane fade show active" id="Vendor-info" role="tabpanel" aria-labelledby="Vendor-info-tab">
+												<div class="vendor-logo d-flex mb-30">
+													<img src={{company.profile_pic}} width="64" height="50" alt="Nature Food" />
+													<div class="vendor-name ml-15">
+														<h6>
+															<a href={% url "Vendor:v-prof" %}>Nature Food</a>
+														</h6>
+													</div>
+												</div>
+												<ul class="contact-infor mb-20">
+													<li>
+														<img src="{% static 'static-only/assets/imgs/theme/icons/icon-location.svg' %}" alt="" />
+														<strong>Address: </strong>
+														<span>{{company.address}}</span>
+													</li>
+													<li>
+														<img src="{% static 'static-only/assets/imgs/theme/icons/icon-contact.svg' %}" alt="" />
+														<strong>Contact Seller:</strong>
+														<span>ggff {{ v_data.value }}</span>
+													</li>
+												</ul>
+												<p>Got a smooth, buttery spread in your fridge? Chances are good that it&#x27;s Good Chef. This brand made Lionto&#x27;s list of the most popular grocery brands across the country. </p>
+											</div>
+											<div class="tab-pane fade show active" id="Reviews" role="tabpanel" aria-labelledby="Reviews-tab">
+												<div class="comments-area">
+													<div class="row">
+														<div class="col-lg-8">
+															<h4 class="mb-30">Customer Reviews</h4>
+															<div class="comment-list"></div>
+														</div>
+														<div class="col-lg-4">
+															<h4 class="mb-30">Customer reviews</h4>
+															<div class="d-flex mb-30">
+																<div class="product-rate d-inline-block mr-15">
+																	<div class="product-rating" style="width: 40%"></div>
+																</div>
+																<h6>0 out of 5</h6>
+															</div>
+															<div class="progress">
+																<span>5 star</span>
+																<div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+															</div>
+															<div class="progress">
+																<span>4 star</span>
+																<div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+															</div>
+															<div class="progress">
+																<span>3 star</span>
+																<div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+															</div>
+															<div class="progress">
+																<span>2 star</span>
+																<div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+															</div>
+															<div class="progress mb-30">
+																<span>1 star</span>
+																<div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="comment-form">
+													<h4 class="mb-15">Add a review</h4>
+													<div class="product-rate d-inline-block mb-30"></div>
+													<div id="message-rate"></div>
+													<div class="form-group">
+														<label>Quality</label>
+														<div class="rate">
+															<input type="radio" id="first" name="star" value="1">
+															<label for="first" title="text">1 star</label>
+															<input type="radio" id="second" name="star" value="2">
+															<label for="second" title="text">2 star</label>
+															<input type="radio" id="third" name="star" value="3">
+															<label for="third" title="text">3 star</label>
+															<input type="radio" id="fourth" name="star" value="4">
+															<label for="fourth" title="text">4 star</label>
+															<input type="radio" id="fifth" name="star" value="5" checked="checked">
+															<label for="fifth" title="text">5 star</label>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-lg-8 col-md-12">
+															<form class="form-contact comment_form form-rating" id="13">
+																<div class="row">
+																	<div class="col-12">
+																		<div class="form-group">
+																			<textarea class="form-control w-100" name="client_message" id="client-message" cols="30" rows="9" placeholder="Write Comment" required></textarea>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group">
+																	<button type="submit" class="button button-contactForm">Submit Review</button>
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div> {% if products %} <div class="col-xl-3 primary-sidebar sticky-sidebar mt-30">
+							<div class="sidebar-widget widget-vendor mb-30 bg-grey-9 box-shadow-none">
+								<h5 class="section-title style-3 mb-20">Vendor</h5>
+								<div class="vendor-logo d-flex mb-30">
+									<img src="{% static 'media/Vendor-img.png' %}" width="64" height="50" alt="Nature Food" />
+									<div class="vendor-name ml-15">
+										<h6>
+											<a href={% url "Vendor:v-prof" %} target="_blank">Nature Food</a>
+										</h6>
+									</div>
+								</div>
+								<ul class="contact-infor">
+									<li>
+										<img src="{% static 'static-only/assets/imgs/theme/icons/icon-location.svg' %}" alt="" />
+										<strong>Address: </strong>
+										<span>{{ products.vendor_address }}</span>
+									</li>
+									<li>
+										<img src="{% static 'static-only/assets/imgs/theme/icons/icon-contact.svg' %}" alt="" />
+										<strong>Contact Seller:</strong>
+										<span>+91 {{ v_data }}</span>
+									</li>
+									<li class="hr">
+										<span></span>
+									</li>
+								</ul>
+								<ul></ul>
+								<p>Become a Vendor? <a href={% url "Vendor:v-signup" %}> Register now</a>
+								</p>
+							</div> {% endif %}
+							<div class="banner-img wow fadeIn mb-lg-0 animated d-lg-block d-none">
+								<a href="haagen-dazs-caramel-cone-ice-cream-ketchup.html">
+									<img src="../media/ads/shop-ad/banner-11.png" alt="" />
+								</a>
+								<div class="banner-text">
+									<span>selem</span>
+									<a href="haagen-dazs-caramel-cone-ice-cream-ketchup.html">
+										<h4> Save 17% on Oganic Juice </h4>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="main">
+				<section class="featured section-padding">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-1-5 col-md-4 col-12 col-sm-6 mb-md-4 mb-xl-0">
+								<div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp" data-wow-delay="0">
+									<div class="banner-icon">
+										<img src="{% static 'assets/imgs/theme/icons/icon-1.svg' %}" alt="" />
+									</div>
+									<div class="banner-text">
+										<h3 class="icon-box-title">Best prices & offers</h3>
+										<p>Orders $50 or more</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
+								<div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
+									<div class="banner-icon">
+										<img src="{% static 'assets/imgs/theme/icons/icon-2.svg' %}" alt="" />
+									</div>
+									<div class="banner-text">
+										<h3 class="icon-box-title">Free delivery</h3>
+										<p>24/7 amazing services</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
+								<div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
+									<div class="banner-icon">
+										<img src="{% static 'assets/imgs/theme/icons/icon-3.svg' %}" alt="" />
+									</div>
+									<div class="banner-text">
+										<h3 class="icon-box-title">Great daily deal</h3>
+										<p>When you sign up</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
+								<div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
+									<div class="banner-icon">
+										<img src="{% static 'assets/imgs/theme/icons/icon-4.svg' %}" alt="" />
+									</div>
+									<div class="banner-text">
+										<h3 class="icon-box-title">Wide assortment</h3>
+										<p>Mega Discounts</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
+								<div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp" data-wow-delay=".4s">
+									<div class="banner-icon">
+										<img src="{% static 'assets/imgs/theme/icons/icon-5.svg' %}" alt="" />
+									</div>
+									<div class="banner-text">
+										<h3 class="icon-box-title">Easy returns</h3>
+										<p>Within 30 days</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-1-5 col-md-4 col-12 col-sm-6 d-xl-none">
+								<div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp" data-wow-delay=".5s">
+									<div class="banner-icon">
+										<img src="{% static 'assets/imgs/theme/icons/icon-6.svg' %}" alt="" />
+									</div>
+									<div class="banner-text">
+										<h3 class="icon-box-title">Safe delivery</h3>
+										<p>Within 30 days</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="section-padding footer-mid">
+					<div class="container pt-15 pb-20">
+						<div class="row">
+							<div class="col">
+								<div class="widget-about font-md mb-md-3 mb-lg-3 mb-xl-0 wow animate__animated animate__fadeInUp" data-wow-delay="0">
+									<div class="logo mb-30">
+										<a href="{% url 'form' %}" class="mb-15">
+											<img src="{% static 'media/site_logo/imgs/logo_VKBBW51_1.png' %}" alt="Nest" />
+										</a>
+										<p class="font-lg text-heading"></p>
+									</div>
+									<ul class="contact-infor">
+										<li>
+											<img src="{% static 'assets/imgs/theme/icons/icon-location.svg' %}" alt="" />
+											<strong>Address: </strong>
+											<span>205 North Michigan Avenue, Suite 810 Chicago, 60601, USA</span>
+										</li>
+										<li>
+											<img src="{% static 'assets/imgs/theme/icons/icon-contact.svg' %}" alt="" />
+											<strong>Call Us:</strong>
+											<span>(123) 456-7890</span>
+										</li>
+										<li>
+											<img src="{% static 'assets/imgs/theme/icons/icon-email-2.svg' %}" alt="" />
+											<strong>Email:</strong>
+											<span>contact <a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="561613203724377835393b">[email&#160;protected]</a>
+											</span>
+										</li>
+										<li>
+											<img src="{% static 'assets/imgs/theme/icons/icon-clock.svg' %}" alt="" />
+											<strong>Hours:</strong>
+											<span>10:00 - 18:00, Mon - Sat</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="footer-link-widget col wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
+								<h4 class="widget-title">Company</h4>
+								<ul class="footer-list mb-sm-5 mb-md-0">
+									<li>
+										<a href="pages/about-us.html">About Us</a>
+									</li>
+									<li>
+										<a href="pages/terms-of-service.html">Terms Of Service</a>
+									</li>
+									<li>
+										<a href="pages/refund-policy.html">Refund Policy</a>
+									</li>
+								</ul>
+							</div>
+							<div class="footer-link-widget col wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
+								<h4 class="widget-title">Pages</h4>
+								<ul class="footer-list mb-sm-5 mb-md-0">
+									<li>
+										<a href="cart/index.html">View Cart</a>
+									</li>
+									<li>
+										<a href="supplier-register/index.html">Become a Vendor</a>
+									</li>
+									<li>
+										<a href="supplier-login/index.html">Vendor Login</a>
+									</li>
+									<li>
+										<a href="contact/index.html">Contact Us</a>
+									</li>
+								</ul>
+							</div>
+							<div class="footer-link-widget col wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
+								<h4 class="widget-title">Categories</h4>
+								<ul class="footer-list mb-sm-5 mb-md-0">
+									<li>
+										<a href="shop/super/food-beverage.html">Food &amp; Beverage</a>
+									</li>
+									<li>
+										<a href="shop/super/beauty-fragrances.html">Beauty &amp; Fragrances</a>
+									</li>
+									<li>
+										<a href="shop/super/office-stationery.html">Office &amp; Stationery</a>
+									</li>
+									<li>
+										<a href="shop/super/consumer-electronics.html">Consumer Electronics</a>
+									</li>
+									<li>
+										<a href="shop/super/fashion-accessories.html">Fashion &amp; Accessories</a>
+									</li>
+									<li>
+										<a href="shop/super/home-furniture.html">Home &amp; Furniture</a>
+									</li>
+									<li>
+										<a href="shop/super/health-personal-care.html">Health &amp; Personal Care</a>
+									</li>
+								</ul>
+							</div>
+							<div class="footer-link-widget widget-install-app col wow animate__animated animate__fadeInUp" data-wow-delay=".4s">
+								<h4 class="widget-title">Install App</h4>
+								<p class="">From App Store or Google Play</p>
+								<div class="download-app">
+									<a href="#" class="hover-up mb-sm-2 mb-lg-0">
+										<img class="active" src="{% static 'assets/imgs/theme/app-store.jpg' %}" alt="" />
+									</a>
+									<a href="#" class="hover-up mb-sm-2">
+										<img src="{% static 'assets/imgs/theme/google-play.jpg' %}" alt="" />
+									</a>
+								</div>
+								<p class="mb-20">Secured Payment Gateways</p>
+								<img class="" src="{% static 'assets/imgs/theme/payment-method.png' %}" alt="" />
+							</div>
+						</div>
+				</section>
+				<div class="container pb-30 wow animate__animated animate__fadeInUp" data-wow-delay="0">
+					<div class="row align-items-center">
+						<div class="col-12 mb-30">
+							<div class="footer-bottom"></div>
+						</div>
+						<div class="col-xl-4 col-lg-6 col-md-6">
+							<p class="font-sm mb-0">&copy; 2022, <strong class="text-brand">Nest</strong> - All rights reserved </p>
+						</div>
+						<div class="col-xl-4 col-lg-6 text-center d-none d-xl-block">
+							<div class="hotline d-lg-inline-flex mr-30">
+								<img src="{% static 'assets/imgs/theme/icons/phone-call.svg' %}" alt="hotline" />
+								<p>1900 - 8888 <span>24/7 Support Center</span>
+								</p>
+							</div>
+							<div class="hotline d-lg-inline-flex mr-30">
+								<img src="{% static 'assets/imgs/theme/icons/phone-call.svg' %}" alt="hotline" />
+								<p>1900 - 6666 <span>Working 8:00 - 22:00</span>
+								</p>
+							</div>
+						</div>
+						<div class="col-xl-4 col-lg-6 col-md-6 text-end d-none d-md-block">
+							<div class="mobile-social-icon">
+								<h6>Follow Us</h6>
+								<a href="https://www.facebook.com/">
+									<img src="{% static 'assets/imgs/theme/icons/icon-facebook-white.svg' %}" alt="" />
+								</a>
+								<a href="https://twitter.com/">
+									<img src="{% static 'assets/imgs/theme/icons/icon-twitter-white.svg' %}" alt="" />
+								</a>
+								<a href="https://www.instagram.com/">
+									<img src="{% static 'assets/imgs/theme/icons/icon-instagram-white.svg' %}" alt="" />
+								</a>
+								<a href="https://www.pinterest.com/">
+									<img src="{% static 'assets/imgs/theme/icons/icon-pinterest-white.svg' %}" alt="" />
+								</a>
+								<a href="https://www.youtube.com/">
+									<img src="{% static 'assets/imgs/theme/icons/icon-youtube-white.svg' %}" alt="" />
+								</a>
+							</div>
+							<p class="font-sm">Up to 15% discount on your first subscribe</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+	</body>
+</html>

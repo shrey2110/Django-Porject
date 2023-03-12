@@ -1,0 +1,66 @@
+{% extends 'common.html' %} 
+{% load static %}
+ {% block content %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7">
+	<![endif]-->
+<!--[if IE 7]>
+	<html class="no-js lt-ie9 lt-ie8">
+		<![endif]-->
+<!--[if IE 8]>
+		<html class="no-js lt-ie9">
+			<![endif]-->
+<!--[if gt IE 8]>
+			<html class="no-js">
+				<!--
+				<![endif]-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Contact Form</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="">
+	</head>
+	<body>
+		<h1>
+			<center> Contact Form <br>
+				<form class="widget-title"> {% if data %} {% for i in data %} <br>
+					{{i.id}} | {{i.name}} | {{i.phone}} | {{i.email}} {% endfor %} {% endif %}
+					<hr>
+					<table class="widget-title">
+						<tr>
+							<td>
+								<center>ID </center>
+							</td>
+							<td>
+								<center>Name </center>
+							</td>
+							<td>
+								<center>PhoneNo </center>
+							</td>
+							<td>
+								<center>EmialId </center>
+							</td>
+						</tr> {% for i in data %} <tr>
+							<td>
+								<center>{{i.id}}</center>
+							</td>
+							<td>
+								<center>{{i.name}}</center>
+							</td>
+							<td>
+								<center>{{i.phone}}</center>
+							</td>
+							<td>
+								<center>{{i.email}}</center>
+							</td> {% endfor %}
+						</tr>
+					</table>
+				</form>
+			</center>
+		</h1>
+	</body>
+</html> {% endblock %}

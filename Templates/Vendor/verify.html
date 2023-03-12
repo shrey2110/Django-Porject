@@ -1,0 +1,155 @@
+{% extends 'Vendor/auth-common.html' %} 
+{% load static %} 
+{% block content %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Email Verification Page</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="">
+		<style>
+			.block {
+				display: block;
+				background-color: rgb(149, 149, 246);
+				margin: 50px;
+				height: 450px;
+				border-radius: 10px;
+				text-align: center;
+				padding: 60px;
+				color: black;
+			}
+
+			p {
+				text-align: center;
+				font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+			}
+
+			#unique {
+				height: 40px;
+				border-radius: 5px;
+				width: 180px;
+				margin-bottom: 50px;
+			}
+
+			#unique:hover {
+				color: whitesmoke;
+				border: 1px solid rgb(44, 44, 44);
+			}
+
+			#unique:focus {
+				border: 2px solid olive;
+				width: 250px;
+				height: 40px;
+				transition: width 0.40s ease-in-out;
+				background-color: whitesmoke;
+				color: black;
+			}
+
+			#button {
+				width: 100px;
+				height: 50px;
+				border-radius: 20px;
+				background-color: #30af74;
+				border: none;
+				color: whitesmoke;
+				padding: 10px;
+			}
+
+			h3 {
+				padding-bottom: 50px;
+			}
+
+			@media screen and (max-width:800px) {
+				body {
+					display: flex;
+					width: 50em;
+					height: 50em;
+				}
+			}
+
+			.messages {
+				background-color: rgb(185, 255, 185);
+				width: 500px;
+				height: 50px;
+				border-radius: 10px;
+				text-align: center;
+				color: green;
+				padding: 12.5px;
+			}
+
+			.error {
+				background-color: rgb(255, 166, 166);
+				color: rgb(243, 21, 21);
+				width: 500px;
+				height: 50px;
+				border-radius: 10px;
+				text-align: center;
+				padding: 12.5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header-bottom header-bottom-bg-color sticky-bar">
+			<div class="container">
+				<div class="header-wrap header-space-between position-relative">
+					<div class="logo logo-width-1 d-block d-lg-none">
+						<a href={% url "index" %}>
+							<img src="{% static 'media/site_logo/imgs/logo_VKBBW51_1.png' %}" alt="Nest" />
+						</a>
+					</div>
+					<div class="header-nav d-none d-lg-flex">
+						<div class="main-categori-wrap d-none d-lg-block">
+							<div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
+								<nav>
+									<ul style="display:flex;">
+										<li>
+											<a class="active" href={% url "index" %}>Home</a>
+										</li>
+										<li class="position-static hot-deals">
+											<img src="{% static 'assets/imgs/theme/icons/icon-hot-white.svg' %}" alt="hot deals" />
+											<a href="shop/index.html">Shop</a>
+										</li>
+										<li class="position-static">
+											<a href="category-list/index.html">Categories </a>
+										</li>
+										<li>
+											<a href="supplier-list/index.html">Stores</a>
+										</li>
+										<li>
+											<a href="blog/index.html">Blog</a>
+										</li>
+										<li>
+											<a href="{% url 'form' %}">Contact</a>
+										</li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+		<center> {% if messages %} {% for i in messages %} {% if i.tags == "error" %} <div class="error">
+				{{i}}
+			</div> {% else %} <div class="messages">
+				{{i}}
+			</div> {% endif %} {% endfor %} {% endif %} <br>
+			<form method="POST" novaidate> {% csrf_token %} <h3>Email Verification Page</h3>
+				<div class="col-lg-3 col-md-3">
+					{{form.non_field_errors}} {% if form %} {% for i in form %} {{i.label_tag}} {{i}} {% endfor %} {% endif %}
+				</div>
+				<br>
+				<br>
+				<input id="button" type="Submit" value="Submit">
+				<br>
+				<br>
+			</form>
+		</center>
+		<br>
+	</body>
+</html> {% endblock %}

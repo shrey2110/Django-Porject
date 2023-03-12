@@ -1,0 +1,131 @@
+{% extends 'common.html' %}
+{% load static %} 
+{% block content %}
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Update Form</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="">
+	</head>
+	<body>
+		<h3>
+			<br>
+			<center>
+            <div class="row">
+						<div class="col-xl-8 col-lg-10 m-auto">
+							<div class="contact-from-area padding-20-row-col">
+								<h2 class="mb-10 text-center">Update Form</h2>
+								<form class="contact-form-style mt-30" method="POST" novalidate> {% csrf_token %} <div class="row">
+										<div class="col-lg-6 col-md-6">
+											<div class="input-style mb-20">
+												{{ form.label_tag }}
+												{{form.first_name}}
+											</div>
+										</div>
+										<div class="col-lg-6 col-md-6">
+											<div class="input-style mb-20">
+												{{ form.label_tag }}
+												{{form.last_name}}
+											</div>
+										</div>
+										<div class="col-lg-6 col-md-6">
+											<div class="input-style mb-20">
+												{{form.phone}}
+											</div>
+										</div>
+										<div class="col-lg-6 col-md-6">
+											<div class="input-style mb-20">
+												{{form.email}}
+											</div>
+										</div>
+										<div class="col-lg-6 col-md-6">
+											<div class="input-style mb-20">
+												{{form.age}}
+											</div>
+										</div>
+										<div class="col-lg-6 col-md-6">
+											<div class="input-style mb-20">
+												{{form.select}}
+											</div>
+										</div>
+										<div class="col-lg-12 col-md-6">
+											<div class="input-style mb-20"> {% comment %} {{form.image.label_tag}} {% endcomment %} {{form.image}}
+											</div>
+										</div>
+										<div class="col-lg-6 col-md-6">
+											<div class="input-style mb-20">
+												{{form.salary}}
+											</div>
+										</div>
+										<div class="col-lg-6 col-md-6">
+											<div class="input-style mb-20">
+												{{form.experience}}
+											</div>
+										</div>
+										<div class="col-lg-12 col-md-10">
+											<div class="textarea-style mb-30">
+												{{form.message}}
+											</div>
+											<div class="col-lg-12 col-md-12">
+												<div class="form-check-input mb-10 text">
+													{{form.gender.label_tag}}
+													{{form.gender}}
+												</div>
+											</div>
+											<div class="col-lg-1 col-md-12">
+												<div class="form-text-input mb-10 text">
+													{{form.interest.label_tag}}
+													{{form.interest}}
+												</div>
+											</div>
+											<br>
+											<br>
+											<br>
+											<br>
+										</div>
+										<center>
+											<button class="col-lg-2" type="submit">Submit</button>
+										</center>
+									</div>
+								</form>
+								<p class="form-messege"></p>
+								<br>
+								<div class="form-messege" style="font-weight: 100; color: #7e7e7e;
+                            font-family: inherit;
+                            font-size: 20px;"> {% if messages %} {% for i in messages %} {{i}} {% endfor%} {% endif %} </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-11 col-md-12">
+						<table style="font-weight: 100; color: #7e7e7e;
+            font-family: inherit;
+            font-size: 24px;">
+							<center>
+								<tr> {% comment %} <td> ID </td> {% endcomment %} <td> Name </td>
+									<td> Phone_No </td>
+									<td> Email_id </td>
+									<td> Insert/Delete Data </td>
+								</tr>
+							</center>
+							<br> {% for i in data %} <tr> {% comment %} <td>{{ i.id }}</td> {% endcomment %} <td>{{ i.first_name }}</td>
+								<td>{{ i.phone }}</td>
+								<td>{{ i.email }}</td> {% comment %} <td>{{ i.password }}</td> {% endcomment %} <td>
+									<a href={% url 'form' %}>
+										<button class="btn">Insert Data</button>
+									</a> &ensp; &ensp; <a href={% url 'remove' i.id %}>
+										<button class="btn">Remove Data</button>
+									</a>
+									<br>
+								</td>
+							</tr> {% endfor %}
+						</table>
+					</div>
+					<hr>
+			</center>
+	</body>
+</html> {% endblock %}

@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js'" lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<!-- /Added by HTTrack -->
+	<head>
+		<meta charset="utf-8" /> 
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<meta name="description" content="We specialise in design and improve product and se" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta property="og:locale" content="en-us" />
+		<meta property="og:title" content="Nest - Multipurpose eCommerce HTML Template" />
+		<meta property="og:site_name" content="Nest" />
+		<meta property="og:description" content="We specialise in design and improve product and se" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="index.html" />
+		<meta property="og:image" content="{% static 'media/site_logo/imgs/logo_VKBBW51_1.png' %}" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Nest - Multipurpose eCommerce HTML Template" />
+		<meta name="twitter:description" content="We specialise in design and improve product and se" />
+		<meta name="twitter:site" content="@Nest" />
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'media/site_logo/imgs/favicon_p4HhDzm_1.png' %}" />
+		<link rel="stylesheet" href="{% static 'assets/css/plugins/animate.min.css' %}" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<title>Nest - Multipurpose eCommerce Website</title>
+		<style>
+			.block {
+				display: block;
+				background-color: rgb(149, 149, 246);
+				margin: 50px;
+				height: 450px;
+				border-radius: 10px;
+				text-align: center;
+				padding: 60px;
+				color: black;
+			}
+
+			p {
+				text-align: center;
+				font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+			}
+
+			#id_otp {
+				height: 40px;
+				border-radius: 5px;
+				width: 180px;
+			}
+
+			#id_otp:hover {
+				color: whitesmoke;
+				border: 1px solid rgb(44, 44, 44);
+			}
+
+			#id_otp:focus {
+				border: 2px solid olive;
+				width: 250px;
+				height: 40px;
+				transition: width 0.40s ease-in-out;
+				background-color: whitesmoke;
+				color: black;
+			}
+
+			#button {
+				width: 100px;
+				height: 50px;
+				border-radius: 20px;
+				background-color: #30af74;
+				border: none;
+				color: whitesmoke;
+				padding: 10px;
+			}
+
+			h3 {
+				padding-bottom: 120px;
+			}
+
+			@media screen and (max-width:800px) {
+				body {
+					display: flex;
+					width: 50em;
+					height: 50em;
+				}
+			}
+
+			.messages {
+				background-color: rgb(185, 255, 185);
+				width: 500px;
+				height: 50px;
+				border-radius: 10px;
+				text-align: center;
+				color: green;
+				padding: 12.5px;
+			}
+
+			.error {
+				background-color: rgb(255, 166, 166);
+				color: rgb(243, 21, 21);
+				width: 500px;
+				height: 50px;
+				border-radius: 10px;
+				text-align: center;
+				padding: 12.5px;
+			}
+		</style>
+	</head>
+	<body>
+		<center>
+			<div class="block">
+				<form method="POST" novaidate> {% csrf_token %} <h3>OTP Verification Page</h3>
+					<div class="col-lg-12 col-md-12">
+						<center>
+							{{form.non_field_errors}} {% if otp %} {% for i in otp %} {{i.label_tag}} {{i}} {% endfor %} {% endif %}
+						</center>
+					</div>
+					<br>
+					<br>
+					<input id="button" type="Submit" value="Submit">
+					<br>
+					<br>
+					<center> {% if messages %} {% for i in messages %} {% if i.tags == "error" %} <div class="error">
+							{{i}}
+						</div> {% else %} <div class="messages">
+							{{i}}
+						</div> {% endif %} {% endfor %} {% endif %} </center>
+				</form>
+			</div>
+		</center>
+	</body>
+</html>
